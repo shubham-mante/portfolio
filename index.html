@@ -208,7 +208,7 @@
     </section>
     <section id="contact">
     <h2>Contact Me</h2>
-        <form id="contact-form" class="contact-form" action="https://script.google.com/macros/s/AKfycbwDxzFkPt-jz2kzZ1B4V0LPVzjzh1RsEGVNHsWkKsHRBThgMLev7yCLek30gFmVjzM/exec" method="POST" onsubmit="addReCaptchaToken(event)">
+    <form id="contact-form" class="contact-form" method="POST" onsubmit="addReCaptchaToken(event)">
         <input type="text" name="name" placeholder="Your Name" required>
         <input type="email" name="email" placeholder="Your Email" required>
         <textarea name="message" placeholder="Your Message" required></textarea>
@@ -226,6 +226,50 @@
         <p>Oops! Something went wrong. Please try again later.</p>
     </div>
 </section>
+
+<script>
+    function addReCaptchaToken(event) {
+        event.preventDefault(); // Prevent form submission
+
+        grecaptcha.ready(function() {
+            grecaptcha.execute('6LeDt6UqAAAAAGGOvhCZ0qWFZ1OH5y15bsrPte-s', {action: 'submit'}).then(function(token) {
+                // Append the token to the form before submitting
+                var recaptchaResponse = document.createElement("input");
+                recaptchaResponse.type = "hidden";
+                recaptchaResponse.name = "g-recaptcha-response";
+                recaptchaResponse.value = token;
+                document.getElementById("contact-form").appendChild(recaptchaResponse);
+
+                // Now submit the form via AJAX
+                var formData = new FormData(document.getElementById("contact-form"));
+
+                fetch('https://script.google.com/macros/s/AKfycbwDxzFkPt-jz2kzZ1B4V0LPVzjzh1RsEGVNHsWkKsHRBThgMLev7yCLek30gFmVjzM/exec', {
+                    method: 'POST',
+                    body: formData
+                })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.status === 'success') {
+                        // Display the success message
+                        document.getElementById('thank-you-message').style.display = 'block';
+                        document.getElementById('error-message').style.display = 'none';
+                        document.getElementById('contact-form').reset(); // Reset the form
+                    } else {
+                        // Display the error message
+                        document.getElementById('error-message').style.display = 'block';
+                        document.getElementById('thank-you-message').style.display = 'none';
+                    }
+                })
+                .catch(error => {
+                    // Display the error message in case of an issue
+                    document.getElementById('error-message').style.display = 'block';
+                    document.getElementById('thank-you-message').style.display = 'none';
+                });
+            });
+        });
+    }
+</script>
+
 
     <footer>
         <p>© 2024 Shubham Mante. All Rights Reserved.</p>
