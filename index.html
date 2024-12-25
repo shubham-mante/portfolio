@@ -3,39 +3,125 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Portfolio</title>
+    <title>Shubham Mante - Portfolio</title>
     <style>
         body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f4f4f9;
+            background-color: #f9f9f9;
             color: #333;
         }
         header {
-            background: #35495e;
+            background-color: #35495e;
             color: white;
-            padding: 1rem;
+            padding: 20px;
             text-align: center;
         }
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+        header p {
+            margin: 5px 0 0;
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #2c3e50;
+            padding: 10px;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            padding: 8px 12px;
+        }
+        nav a:hover {
+            background-color: #1abc9c;
+            border-radius: 4px;
+        }
         section {
-            padding: 1.5rem;
+            padding: 20px;
+            max-width: 900px;
+            margin: auto;
+        }
+        h2 {
+            color: #2c3e50;
+            border-bottom: 2px solid #2c3e50;
+            padding-bottom: 5px;
+        }
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+        ul li {
+            margin: 5px 0;
+        }
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #35495e;
+            color: white;
+            margin-top: 20px;
+        }
+        .contact a {
+            color: #1abc9c;
+            text-decoration: none;
         }
     </style>
 </head>
 <body>
     <header>
-        <h1>Welcome to My Portfolio</h1>
-        <p>Explore my projects and achievements.</p>
+        <h1>Shubham Mante</h1>
+        <p>Firmware Engineer | Embedded Systems Specialist | Wireless Communication</p>
     </header>
-    <section>
+    <nav>
+        <a href="#about">About</a>
+        <a href="#experience">Experience</a>
+        <a href="#projects">Projects</a>
+        <a href="#skills">Skills</a>
+        <a href="#contact">Contact</a>
+    </nav>
+    <section id="about">
         <h2>About Me</h2>
-        <p>Hello! I am [Your Name], a Firmware Engineer specializing in embedded systems and wireless communication.</p>
+        <p>
+            I am a Firmware Engineer specializing in embedded systems and wireless communication. With experience in RTOS, BLE, WiFi, and hardware debugging, I deliver high-performance firmware solutions for modern IoT devices.
+        </p>
     </section>
-    <section>
-        <h2>Contact</h2>
-        <p>Email: [Your Email Address]</p>
-        <p>LinkedIn: [Your LinkedIn Profile]</p>
+    <section id="experience">
+        <h2>Experience</h2>
+        <ul>
+            <li><strong>Associate Software Engineer</strong> - Innopark India Pvt Ltd / Aether Mindtech Solutions Pvt Ltd (2022 - Present)</li>
+            <li><strong>Research Assistant</strong> - IIIT-Hyderabad (2019 - 2023)</li>
+            <li><strong>Research Intern</strong> - LAAS-CNRS / IRIT, Toulouse, France (2020 - 2021)</li>
+        </ul>
     </section>
+    <section id="projects">
+        <h2>Notable Projects</h2>
+        <ul>
+            <li><strong>IoT Data Monitoring System:</strong> Scalable solution with 250+ nodes for Smart Cities.</li>
+            <li><strong>Water Quality Monitoring:</strong> Automated creek monitoring system reducing manual intervention by 50%.</li>
+            <li><strong>OTA Firmware Updates:</strong> Enabled reliable firmware updates for IoT devices.</li>
+        </ul>
+    </section>
+    <section id="skills">
+        <h2>Skills</h2>
+        <ul>
+            <li>RTOS: Zephyr, FreeRTOS</li>
+            <li>Protocols: I2C, SPI, UART, BLE, WiFi</li>
+            <li>Programming: C, Embedded C, Python</li>
+            <li>Tools: Git, JIRA, Multimeter, Logic Analyzer</li>
+        </ul>
+    </section>
+    <section id="contact">
+        <h2>Contact Me</h2>
+        <p>Email: <a href="mailto:shubham.p.mante@gmail.com">shubham.p.mante@gmail.com</a></p>
+        <p>LinkedIn: <a href="https://linkedin.com/in/shubham-mante" target="_blank">linkedin.com/in/shubham-mante</a></p>
+        <p>GitHub: <a href="https://github.com/shubham-mante" target="_blank">github.com/shubham-mante</a></p>
+    </section>
+    <footer>
+        <p>© 2024 Shubham Mante. All Rights Reserved.</p>
+    </footer>
 </body>
 </html>
