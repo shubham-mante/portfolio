@@ -221,10 +221,19 @@
         <p>Thank you for reaching out! Your message has been sent successfully.</p>
     </div>
 
-    <!-- Error message -->
-    <div id="error-message" style="display: none; color: red; font-size: 1.2em; margin-top: 20px;">
-        <p>Oops! Something went wrong. Please try again later.</p>
+    <!-- Error message 1 -->
+    <div id="error-message1" style="display: none; color: red; font-size: 1.2em; margin-top: 20px;">
+        <p>1 Oops! Something went wrong. Please try again later.</p>
     </div>
+    <!-- Error message 2 -->
+    <div id="error-message2" style="display: none; color: red; font-size: 1.2em; margin-top: 20px;">
+        <p>2 Oops! Something went wrong. Please try again later.</p>
+    </div>
+    <!-- Error message 3 -->
+    <div id="error-message3" style="display: none; color: red; font-size: 1.2em; margin-top: 20px;">
+        <p>3 Oops! Something went wrong. Please try again later.</p>
+    </div>
+    
 </section>
 
 <script>
@@ -252,17 +261,17 @@
                     if (data.status === 'success') {
                         // Display the success message
                         document.getElementById('thank-you-message').style.display = 'block';
-                        document.getElementById('error-message').style.display = 'none';
+                        document.getElementById('error-message1').style.display = 'none';
                         document.getElementById('contact-form').reset(); // Reset the form
                     } else {
                         // Display the error message
-                        document.getElementById('error-message').style.display = 'block';
+                        document.getElementById('error-message2').style.display = 'block';
                         document.getElementById('thank-you-message').style.display = 'none';
                     }
                 })
                 .catch(error => {
                     // Display the error message in case of an issue
-                    document.getElementById('error-message').style.display = 'block';
+                    document.getElementById('error-message3').style.display = 'block';
                     document.getElementById('thank-you-message').style.display = 'none';
                 });
             });
