@@ -69,7 +69,72 @@
             color: #1abc9c;
             text-decoration: none;
         }
+        .profiles {
+            margin-top: 30px;
+        }
+        .profiles a {
+            margin: 0 10px;
+            font-size: 1.5em;
+            color: #333;
+            text-decoration: none;
+        }
+        .profiles a:hover {
+            color: #1abc9c;
+        }
+        .profiles i {
+            margin-right: 8px;
+        }
+        .contact-form input, .contact-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        .contact-form button {
+            background-color: #35495e;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .contact-form button:hover {
+            background-color: #1abc9c;
+        }
+        .g-recaptcha {
+            margin: 10px 0;
+        }
+
+        /* reCAPTCHA Badge styling */
+        .grecaptcha-badge {
+            visibility: visible !important;
+            position: fixed !important;
+            bottom: 10px !important;
+            right: 10px !important;
+            z-index: 9999 !important;
+            padding: 5px;
+            font-size: 14px;
+        }
     </style>
+    <!-- Google reCAPTCHA v3 script -->
+    <script src="https://www.google.com/recaptcha/api.js?render=6LeDt6UqAAAAAGGOvhCZ0qWFZ1OH5y15bsrPte-s"></script>
+    <script>
+        function addReCaptchaToken(evenft) {
+            event.preventDefault(); // Prevent form submission
+            grecaptcha.ready(function() {
+                grecaptcha.execute('6LeDt6UqAAAAAGGOvhCZ0qWFZ1OH5y15bsrPte-s', {action: 'submit'}).then(function(token) {
+                    // Append the token to the form before submitting
+                    var recaptchaResponse = document.createElement("input");
+                    recaptchaResponse.type = "hidden";
+                    recaptchaResponse.name = "g-recaptcha-response";
+                    recaptchaResponse.value = token;
+                    document.getElementById("contact-form").appendChild(recaptchaResponse);
+                    document.getElementById("contact-form").submit(); // Submit the form
+                });
+            });
+        }
+    </script>
 </head>
 <body>
     <header>
@@ -82,6 +147,7 @@
         <a href="#projects">Projects</a>
         <a href="#publications">Publications</a>
         <a href="#skills">Skills</a>
+        <a href="#profiles">Profiles</a>
         <a href="#contact">Contact</a>
     </nav>
     <section id="about">
@@ -109,10 +175,10 @@
     <section id="publications">
         <h2>Publications</h2>
         <ul>
-            <li>"A Multi-layer Data Platform Architecture for Smart Cities using oneM2M and IUDX," IEEE WF-IoT 2022</li>
-            <li>"5D-IoT: Semantic Web-Based Framework for IoT Data Quality Assessment," ACM/SIGAPP 2022</li>
-            <li>"Energy Monitoring using LoRaWAN-Based Smart Meters and oneM2M Platform," IEEE Sensors 2021</li>
-            <li>"EV Charging Station with OCPP and oneM2M Platform," IEEE TENCON 2021</li>
+            <li><a href="https://ieeexplore.ieee.org/document/10152258" target="_blank">"A Multi-layer Data Platform Architecture for Smart Cities using oneM2M and IUDX," IEEE WF-IoT 2022</a></li>
+            <li><a href="https://dl.acm.org/doi/10.1145/3477314.3507234" target="_blank">"5D-IoT: Semantic Web-Based Framework for IoT Data Quality Assessment," ACM/SIGAPP 2022</a></li>
+            <li><a href="https://ieeexplore.ieee.org/document/9639822" target="_blank">"Energy Monitoring using LoRaWAN-Based Smart Meters and oneM2M Platform," IEEE Sensors 2021</a></li>
+            <li><a href="https://ieeexplore.ieee.org/document/9707311" target="_blank">"EV Charging Station with OCPP and oneM2M Platform," IEEE TENCON 2021</a></li>
         </ul>
     </section>
     <section id="skills">
@@ -125,11 +191,27 @@
             <li>Tools: Git, Bitbucket, Altium</li>
         </ul>
     </section>
+    <section id="profiles" class="profiles">
+        <h2>Profiles</h2>
+        <a href="https://linkedin.com/in/shubham-mante" target="_blank" title="LinkedIn">
+            <i>&#128279; LinkedIn</i>
+        </a>
+        <a href="https://scholar.google.com/citations?user=7TyxEgYAAAAJ&hl=en" target="_blank" title="Google Scholar">
+            <i>&#127891; Google Scholar</i>
+        </a>
+        <a href="https://github.com/shubham-mante" target="_blank" title="GitHub">
+            <i>&#128187; GitHub</i>
+        </a>
+    </section>
     <section id="contact">
         <h2>Contact Me</h2>
-        <p>Email: <a href="mailto:shubham.p.mante@gmail.com">shubham.p.mante@gmail.com</a></p>
-        <p>LinkedIn: <a href="https://linkedin.com/in/shubham-mante" target="_blank">linkedin.com/in/shubham-mante</a></p>
-        <p>GitHub: <a href="https://github.com/shubham-mante" target="_blank">github.com/shubham-mante</a></p>
+<form id="contact-form" class="contact-form" action="https://script.google.com/macros/s/AKfycbwDxzFkPt-jz2kzZ1B4V0LPVzjzh1RsEGVNHsWkKsHRBThgMLev7yCLek30gFmVjzM/exec" method="POST" onsubmit="onSubmit(event)">            <input type="text" name="name" placeholder="Your Name" required>
+            <input type="email" name="email" placeholder="Your Email" required>
+            <textarea name="message" placeholder="Your Message" required></textarea>
+            
+            <!-- reCAPTCHA will add the token here -->
+            <button type="submit">Send Message</button>
+        </form>
     </section>
     <footer>
         <p>© 2024 Shubham Mante. All Rights Reserved.</p>
