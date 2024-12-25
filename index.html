@@ -120,8 +120,9 @@
     <!-- Google reCAPTCHA v3 script -->
     <script src="https://www.google.com/recaptcha/api.js?render=6LeDt6UqAAAAAGGOvhCZ0qWFZ1OH5y15bsrPte-s"></script>
     <script>
-        function addReCaptchaToken(evenft) {
+        function addReCaptchaToken(event) {
             event.preventDefault(); // Prevent form submission
+            
             grecaptcha.ready(function() {
                 grecaptcha.execute('6LeDt6UqAAAAAGGOvhCZ0qWFZ1OH5y15bsrPte-s', {action: 'submit'}).then(function(token) {
                     // Append the token to the form before submitting
@@ -130,7 +131,9 @@
                     recaptchaResponse.name = "g-recaptcha-response";
                     recaptchaResponse.value = token;
                     document.getElementById("contact-form").appendChild(recaptchaResponse);
-                    document.getElementById("contact-form").submit(); // Submit the form
+                    
+                    // Submit the form after adding the token
+                    document.getElementById("contact-form").submit();
                 });
             });
         }
@@ -205,10 +208,10 @@
     </section>
     <section id="contact">
         <h2>Contact Me</h2>
-<form id="contact-form" class="contact-form" action="https://script.google.com/macros/s/AKfycbwDxzFkPt-jz2kzZ1B4V0LPVzjzh1RsEGVNHsWkKsHRBThgMLev7yCLek30gFmVjzM/exec" method="POST" onsubmit="onSubmit(event)">            <input type="text" name="name" placeholder="Your Name" required>
+        <form id="contact-form" class="contact-form" action="https://script.google.com/macros/s/AKfycbwDxzFkPt-jz2kzZ1B4V0LPVzjzh1RsEGVNHsWkKsHRBThgMLev7yCLek30gFmVjzM/exec" method="POST" onsubmit="addReCaptchaToken(event)">
+            <input type="text" name="name" placeholder="Your Name" required>
             <input type="email" name="email" placeholder="Your Email" required>
             <textarea name="message" placeholder="Your Message" required></textarea>
-            
             <!-- reCAPTCHA will add the token here -->
             <button type="submit">Send Message</button>
         </form>
