@@ -81,90 +81,17 @@
         .profiles a:hover {
             color: #1abc9c;
         }
-        .profiles i {
-            margin-right: 8px;
+        .profiles img {
+            width: 40px;
+            height: 40px;
+            vertical-align: middle;
         }
-        .contact-form input, .contact-form textarea {
-            width: 100%;
-            padding: 10px;
-            margin: 10px 0;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-        }
-        .contact-form button {
-            background-color: #35495e;
-            color: white;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-        }
-        .contact-form button:hover {
-            background-color: #1abc9c;
-        }
-        .g-recaptcha {
-            margin: 10px 0;
-        }
-
-        /* reCAPTCHA Badge styling */
-        .grecaptcha-badge {
-            visibility: visible !important;
-            position: fixed !important;
-            bottom: 10px !important;
-            right: 10px !important;
-            z-index: 9999 !important;
-            padding: 5px;
-            font-size: 14px;
+        .google-drive-logo {
+            width: 40px;
+            height: 40px;
+            margin-right: 10px;
         }
     </style>
-    <!-- Google reCAPTCHA v3 script -->
-    <script src="https://www.google.com/recaptcha/api.js?render=6LeDt6UqAAAAAGGOvhCZ0qWFZ1OH5y15bsrPte-s"></script>
-    <script>
-        function addReCaptchaToken(event) {
-            event.preventDefault(); // Prevent form submission
-            
-            // Execute reCAPTCHA
-            grecaptcha.ready(function() {
-                grecaptcha.execute('6LeDt6UqAAAAAGGOvhCZ0qWFZ1OH5y15bsrPte-s', {action: 'submit'}).then(function(token) {
-                    
-                    // Append the token to the form
-                    var recaptchaResponse = document.createElement("input");
-                    recaptchaResponse.type = "hidden";
-                    recaptchaResponse.name = "g-recaptcha-response";
-                    recaptchaResponse.value = token;
-                    document.getElementById("contact-form").appendChild(recaptchaResponse);
-                    
-                    // Send form data using fetch without redirect
-                    submitFormData();
-                });
-            });
-        }
-
-        // Function to submit form using fetch
-        function submitFormData() {
-            var form = document.getElementById("contact-form");
-            var formData = new FormData(form);
-
-            // Perform the fetch request to submit the form data to Google Apps Script
-            fetch(form.action, {
-                method: 'POST',
-                body: formData
-            })
-            .then(response => response.json())
-            .then(data => {
-                if (data.success) {
-                    document.getElementById("thank-you-message").style.display = 'block';
-                    form.reset();
-                } else {
-                    document.getElementById("error-message").style.display = 'block';
-                }
-            })
-            .catch(error => {
-                console.error('Error:', error);
-                document.getElementById("error-message").style.display = 'block';
-            });
-        }
-    </script>
 </head>
 <body>
     <header>
@@ -178,7 +105,7 @@
         <a href="#publications">Publications</a>
         <a href="#skills">Skills</a>
         <a href="#profiles">Profiles</a>
-        <a href="#contact">Contact</a>
+        <a href="#resume">My Resume</a> <!-- Added link for My Resume -->
     </nav>
     <section id="about">
         <h2>About Me</h2>
@@ -223,36 +150,40 @@
     </section>
     <section id="profiles" class="profiles">
         <h2>Profiles</h2>
+        <!-- LinkedIn Logo -->
         <a href="https://linkedin.com/in/shubham-mante" target="_blank" title="LinkedIn">
-            <i>&#128279; LinkedIn</i>
+            <img src="https://github.com/shubham-mante/portfolio/raw/main/logos/linkedin.svg" alt="LinkedIn Logo">
         </a>
+        <!-- Google Scholar Logo -->
         <a href="https://scholar.google.com/citations?user=7TyxEgYAAAAJ&hl=en" target="_blank" title="Google Scholar">
-            <i>&#127891; Google Scholar</i>
+            <img src="https://github.com/shubham-mante/portfolio/raw/main/logos/google-scholar.svg" alt="Google Scholar Logo">
         </a>
+        <!-- GitHub Logo -->
         <a href="https://github.com/shubham-mante" target="_blank" title="GitHub">
-            <i>&#128187; GitHub</i>
+            <img src="https://github.com/shubham-mante/portfolio/raw/main/logos/github.svg" alt="GitHub Logo">
         </a>
     </section>
-    <section id="contact">
+
+    <!-- New Resume Section -->
+    <!-- Resume Section -->
+    <section id="resume">
+    <h2>My Resume</h2>
+    <a href="#" onclick="window.open('https://drive.google.com/drive/folders/1ESvHtO39pLymbbrzy3vyyuZ0GXvh5cck?usp=sharing', '_blank'); return false;">
+        <img src="https://github.com/shubham-mante/portfolio/raw/main/logos/google-drive-old.svg" alt="Google Drive" class="google-drive-logo">
+    </a>
+</section>
+
+
+    <!-- Contact Section (Commented out) -->
+    <!-- <section id="contact">
         <h2>Contact Me</h2>
         <form id="contact-form" class="contact-form" action="https://script.google.com/macros/s/AKfycbwDxzFkPt-jz2kzZ1B4V0LPVzjzh1RsEGVNHsWkKsHRBThgMLev7yCLek30gFmVjzM/exec" method="POST" onsubmit="addReCaptchaToken(event)">
             <input type="text" name="name" placeholder="Your Name" required>
             <input type="email" name="email" placeholder="Your Email" required>
             <textarea name="message" placeholder="Your Message" required></textarea>
-            <!-- reCAPTCHA will add the token here -->
             <button type="submit">Send Message</button>
         </form>
-
-        <!-- Success message -->
-        <div id="thank-you-message" style="display: none; color: green; font-size: 1.2em; margin-top: 20px;">
-            <p>Thank you for reaching out! Your message has been sent successfully.</p>
-        </div>
-
-        <!-- Error message -->
-        <div id="error-message" style="display: none; color: red; font-size: 1.2em; margin-top: 20px;">
-            <p>Oops! Something went wrong. Please try again later.</p>
-        </div>
-    </section>
+    </section> -->
 
     <footer>
         <p>© 2024 Shubham Mante. All Rights Reserved.</p>
