@@ -5,131 +5,124 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Shubham Mante - Portfolio</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f9f9f9;
-            color: #333;
-        }
-        header {
-            background-color: #35495e;
-            color: white;
-            padding: 20px;
-            text-align: center;
-        }
-        header h1 {
-            margin: 0;
-            font-size: 2.5em;
-        }
-        header p {
-            margin: 5px 0 0;
-        }
-        nav {
-            display: flex;
-            justify-content: center;
-            background-color: #2c3e50;
-            padding: 10px;
-        }
-        nav a {
-            color: white;
-            text-decoration: none;
-            margin: 0 15px;
-            padding: 8px 12px;
-        }
-        nav a:hover {
-            background-color: #1abc9c;
-            border-radius: 4px;
-        }
-        section {
-            padding: 20px;
-            max-width: 900px;
-            margin: auto;
-        }
-        h2 {
-            color: #2c3e50;
-            border-bottom: 2px solid #2c3e50;
-            padding-bottom: 5px;
-        }
-        ul {
-            list-style: none;
-            padding: 0;
-        }
-        ul li {
-            margin: 5px 0;
-        }
-        footer {
-            text-align: center;
-            padding: 10px;
-            background-color: #35495e;
-            color: white;
-            margin-top: 20px;
-        }
-        .contact a {
-            color: #1abc9c;
-            text-decoration: none;
-        }
-        .profiles {
-            margin-top: 30px;
-        }
-        .profiles a {
-            margin: 0 10px;
-            font-size: 1.5em;
-            color: #333;
-            text-decoration: none;
-        }
-        .profiles a:hover {
-            color: #1abc9c;
-        }
-        .profiles img {
-            width: 40px;
-            height: 40px;
-            vertical-align: middle;
-        }
-        .resume img {
-            width: 40px;
-            height: 40px;
-            vertical-align: middle;
-        }
+        body { font-family: Arial, sans-serif; margin: 0; padding: 0; background-color: #f9f9f9; color: #333; }
+        header { background-color: #35495e; color: white; padding: 20px; text-align: center; }
+        nav { display: flex; justify-content: center; background-color: #2c3e50; padding: 10px; }
+        nav a { color: white; text-decoration: none; margin: 0 15px; padding: 8px 12px; }
+        nav a:hover { background-color: #1abc9c; border-radius: 4px; }
+        section { padding: 20px; max-width: 900px; margin: auto; }
+        h2 { color: #2c3e50; border-bottom: 2px solid #2c3e50; padding-bottom: 5px; }
+        ul { list-style: disc; padding: 20px; }
+        ul li { margin: 12px 0; }
+        .case-study { background:#fff; padding:15px; border-radius:8px; margin:15px 0; border-left:4px solid #1abc9c; }
+        footer { text-align: center; padding: 10px; background-color: #35495e; color: white; margin-top: 20px; }
+        .profiles img, .resume img { width: 40px; height: 40px; }
     </style>
 </head>
 <body>
-    <header>
-        <h1>Shubham Mante</h1>
-        <p>Firmware Engineer | Embedded Systems | Wireless Communication</p>
-    </header>
-    <nav>
-        <a href="#about">About</a>
-        <a href="#experience">Experience</a>
-        <a href="#projects">Projects</a>
-        <a href="#publications">Publications</a>
-        <a href="#skills">Skills</a>
-        <a href="#profiles">Profiles</a>
-        <a href="#resume">My Resume</a> <!-- Added link for My Resume -->
-    </nav>
-    <section id="about">
-        <h2>About Me</h2>
-        <p>
-            I am an accomplished Firmware Engineer with extensive experience in embedded systems, RTOS, BLE, and WiFi technologies. Skilled in firmware and hardware development, debugging, and cross-functional collaboration, I am committed to driving innovation in IoT and wireless communication.
-        </p>
-    </section>
-    <section id="experience">
-        <h2>Experience</h2>
+<header>
+    <h1>Shubham Mante</h1>
+    <p>Firmware Engineer | Embedded Systems | Wireless Communication</p>
+</header>
+<nav>
+    <a href="#about">About</a>
+    <a href="#experience">Experience</a>
+    <a href="#projects">Projects</a>
+    <a href="#highlights">Highlights</a>
+    <a href="#publications">Publications</a>
+    <a href="#skills">Skills</a>
+    <a href="#profiles">Profiles</a>
+    <a href="#resume">My Resume</a>
+</nav>
+<section id="about">
+    <h2>About Me</h2>
+ 	<p>I’m an Embedded Systems Engineer who enjoys building connected devices from the ground up — firmware, hardware bring-up, wireless connectivity, RTOS design (Zephyr / FreeRTOS), power optimization, security, and production readiness.</p>          
+	<p>Over the period, I’ve worked across medical devices, industrial IoT, and smart-energy systems, designing firmware for Nordic, ESP32, and STM32 platforms and integrating wireless technologies like BLE, Wi-Fi, MQTT, LoRaWAN, NFC, LTE and NB-IoT.</p>          
+	<p>I’m especially passionate about the full lifecycle of embedded product development — from early architecture and prototype firmware to secure boot, OTA updates, and compliance testing (FCC, SAR, IEC 60601).</p>          
+	<p>I enjoy solving the hard problems : flaky radios, unstable boards, timing bottlenecks, power-hungry peripherals, or debugging the misbehaving RTOS threads.</p>       
+</section>
+<section id="experience">
+    <h2>Experience</h2>
+
+    <div class="case-study">
+        <h3>Manager – Product Development<br><small>Aether Mindtech Solutions (2024–Present)</small></h3>
+        <p>I lead firmware development for connected medical and industrial devices, focusing on secure update pipelines, wireless optimization, and certification-driven development.</p>
         <ul>
-            <li><strong>Manager - Product Development</strong> - Aether Mindtech Solutions Pvt Ltd (Sep 2024 - Present)</li>
-            <li><strong>Associate Software Engineer</strong> - Innopark India Pvt Ltd / Aether Mindtech Solutions Pvt Ltd (Jan 2022 - Aug 2024)</li>
-            <li><strong>Research Assistant</strong> - IIIT-Hyderabad (Jul 2019 - Jun 2023)</li>
-            <li><strong>Research Intern</strong> - LAAS-CNRS / IRIT, Toulouse, France (May 2020 - Sep 2021)</li>
+            <li>Designed Secure Boot + OTA pipeline enabling trusted, tamper-proof updates.</li>
+            <li>Optimized Wi-Fi + BLE coexistence and throughput for real-time communication.</li>
+            <li>Reduced PCB footprint by 30% while maintaining RF performance.</li>
+            <li>Integrated LLDs/Base Software across Nordic and ESP SoCs.</li>
+            <li>Established CI/CD firmware workflows with automated signing and release gates.</li>
+            <li>Led IEC-60601 medical device safety compliance investigations.</li>
         </ul>
-    </section>
-    <section id="projects">
-        <h2>Projects</h2>
+    </div>
+
+    <div class="case-study">
+        <h3>Associate Embedded Software Engineer<br><small>Innopark / Aether Mindtech (2022–2024)</small></h3>
+        <p>Worked across wireless firmware, RTOS architecture, power optimization, and production-line debugging for high-volume IoT products.</p>
         <ul>
-            <li><strong>IoT Data Monitoring System:</strong> Engineered a scalable system with 250+ nodes for Smart Cities.</li>
-            <li><strong>Water Quality Monitoring:</strong> Automated creek monitoring, reducing manual intervention by 50%.</li>
+            <li>Achieved >1 Mbps BLE throughput with PHY tuning, DMA pipelines, and optimized buffering.</li>
+            <li>Migrated bare-metal system to Zephyr RTOS with multithreading and synchronization primitives.</li>
+            <li>Improved battery performance by 30% using dynamic power management.</li>
+            <li>Implemented OTA with rollback protection and secure image validation.</li>
+            <li>Developed test firmware for SAR/FCC certifications.</li>
         </ul>
-    </section>
-    <section id="publications">
+    </div>
+
+    <div class="case-study">
+        <h3>Research Assistant<br><small>IIIT-Hyderabad (2019–2022)</small></h3>
+        <p>Developed large-scale smart-city IoT infrastructure and high-resolution monitoring platforms.</p>
+        <ul>
+            <li>Built IoT system supporting 600+ concurrent users with zero downtime.</li>
+            <li>Created energy-monitoring pipeline collecting 10,000+ datapoints per meter.</li>
+            <li>Designed device → gateway → cloud → analytics pipelines.</li>
+        </ul>
+    </div>
+
+    <div class="case-study">
+        <h3>Research Intern<br><small>LAAS-CNRS, Toulouse (2020–2021)</small></h3>
+        <p>Designed semantic quality-assessment algorithms for heterogeneous IoT data streams.</p>
+        <ul>
+            <li>Improved data accuracy by 25% using duplicate-detection logic.</li>
+            <li>Reduced communication delay by 30% through optimized flow models.</li>
+        </ul>
+    </div>
+
+</section>
+<section id="projects">
+    <h2>Projects</h2>
+    <ul>
+        <li><strong>250+ Node Smart‑City IoT Deployment:</strong> Real‑time multi‑sensor network with automated fail‑recovery pipelines.</li>
+        <li><strong>Water Quality Monitoring:</strong> Adaptive LoRa‑based low‑power creek monitoring system.</li>
+        <li><strong>Energy Monitoring Platform:</strong> High‑resolution (10k+ datapoints/meter) industrial metering system.</li>
+    </ul>
+</section>
+<section id="highlights">
+    <h2>Highlights</h2>
+
+    <div class="case-study">
+        <h3>High‑Throughput BLE Data Transfer (>1 Mbps)</h3>
+        <p><strong>Problem:</strong> Required real‑time wireless transfer of large sensor datasets.</p>
+        <p><strong>Contribution:</strong> Tuned PHY, MTU, DMA, interrupt architecture, and implemented ring‑buffered streaming.</p>
+        <p><strong>Outcome:</strong> Sustained >1 Mbps throughput with 40% fewer reconnection events.</p>
+    </div>
+
+    <div class="case-study">
+        <h3>Secure OTA with Verified Boot</h3>
+        <p><strong>Problem:</strong> Devices needed secure, tamper‑resistant firmware updates.</p>
+        <p><strong>Contribution:</strong> Implemented Secure Boot chain, image signing, rollback protection, partition‑safe OTA design, and CI/CD‑based signing.</p>
+        <p><strong>Outcome:</strong> Delivered stable, secure OTA updates with near‑zero corruption issues.</p>
+    </div>
+
+    <div class="case-study">
+        <h3>Zephyr RTOS Migration</h3>
+        <p><strong>Problem:</strong> Bare‑metal firmware became difficult to scale and maintain.</p>
+        <p><strong>Contribution:</strong> Introduced multithreading, mutex/sem sync, watchdog recovery, and modular driver stacking.</p>
+        <p><strong>Outcome:</strong> Improved responsiveness, reduced blocking paths, and enabled scalable future development.</p>
+    </div>
+
+</section>
+<section id="publications">
         <h2>Publications</h2>
         <ul>
             <li><a href="https://ieeexplore.ieee.org/document/10152258" target="_blank">"A Multi-layer Data Platform Architecture for Smart Cities using oneM2M and IUDX," IEEE WF-IoT 2022</a></li>
@@ -141,11 +134,18 @@
     <section id="skills">
         <h2>Skills</h2>
         <ul>
-            <li>RTOS (Zephyr, FreeRTOS), Embedded Linux, Bare Metal</li>
-            <li>Protocols: I2C, SPI, UART, BLE, WiFi</li>
-            <li>Programming: Embedded C, Python</li>
-            <li>Microcontrollers: Nordic Semi, ESP32, STM32</li>
-            <li>Tools: Git, Bitbucket, Altium</li>
+            <li><strong>Wireless Protocols:</strong> BLE, WiFi, NFC, NB-IoT, MQTT</li>
+            <li><strong>Communication Protocols:</strong> UART, I2C, I2S, SPI, SD/SDIO/MMC</li>
+            <li><strong>Debuggers:</strong> JTAG, ST-LINK V2, J-LINK, ADB</li>
+            <li><strong>Programming Languages:</strong> Embedded C, Python</li>
+            <li><strong>Test Equipments:</strong> Multimeter, Logic Analyzer</li>
+            <li><strong>IDEs:</strong> Visual Studio, STM32CubeIDE, Arduino, PyCharm</li>
+            <li><strong>Embedded OS Platforms:</strong> Zephyr RTOS, FreeRTOS, Bare Metal, Linux</li>
+            <li><strong>Tools & Softwares:</strong> GitHub, JIRA, Bitbucket, Altium</li>
+            <li><strong>Micro-controllers (SoCs):</strong> Nordic (n52X, n53, n91X, n7X), STM32, ESP32</li>
+            <li><strong>Embedded Linux / Android:</strong> RK3566 (Android TV OS), TurboX C404</li>
+            <li><strong>Processor Platforms:</strong> ARM Cortex-M (M4F, M33, M0), Cortex (A53, A55), Xtensa</li>
+            <li><strong>API Development:</strong> Django REST API framework, HTTP, Postman</li>
         </ul>
     </section>
     <section id="profiles" class="profiles">
@@ -174,7 +174,7 @@
 </section>
 
     <footer>
-        <p>© 2024 Shubham Mante. All Rights Reserved.</p>
+        <p>© 2025 Shubham Mante. All Rights Reserved.</p>
     </footer>
 </body>
 </html>
